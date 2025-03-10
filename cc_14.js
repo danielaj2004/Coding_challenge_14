@@ -70,3 +70,26 @@ function addTicket(customerName, issueDescription, priorityLevel) {
         }); // moving back fields to static text
     });
 }
+
+// Task 3 Converting NodeLists to Arrays for Bulk Updates
+function highlightHighPriorityTickets() { // function to highlight tickets
+    const highlightHighPriorityTickets = document.querySelectorAll('.high');
+    const highPriorityArray = Array.from(highlightHighPriorityTickets);
+
+    highPriorityArray.forEach(ticket => {
+        ticket.style.backgroundColor = 'lightblue'; // setting a highlight color
+        ticket.style.border = '2px solid green'; // added a border
+    });
+}
+
+highlightHighPriorityTickets()
+
+const ticketContainer = document.getElementById('ticketContainer');
+ticketContainer.addEventListener('click', function() {
+    console.log('A ticket was clicked')
+}); // attaching event listener to ticketContainer
+
+// examples cases
+addTicket('Rita Ortiz', 'Unable to Delete Account', 'High');
+addTicket('John Smith', 'Unable to Delete Account', 'High');
+addTicket('James Newsome', 'Page not found', 'Low');
